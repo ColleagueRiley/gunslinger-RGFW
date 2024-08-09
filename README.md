@@ -1,3 +1,11 @@
+# Gunslinger RGFW
+
+This is an example of a RGFW backend implementation for gunslinger. 
+
+This backend itself has some issues and should probably be tested and modified before it's used. 
+
+To use the RGFW implementation add `#define GS_PLATFORM_RGFW` to the top a source file (the same one with `GS_IMPL`
+
 ![gunslinger](https://raw.githubusercontent.com/MrFrenik/gunslinger/master/docs/gs_logo2.png)
 ![GitHub](https://img.shields.io/github/license/mrfrenik/gunslinger)
 ![GitHub top language](https://img.shields.io/github/languages/top/mrfrenik/gunslinger?label=c99)
