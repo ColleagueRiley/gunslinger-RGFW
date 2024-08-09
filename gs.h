@@ -6807,7 +6807,11 @@ gs_main(int32_t argc, char** argv);
 // Default provided platform implementations (these will be removed eventually)
 #ifndef GS_PLATFORM_IMPL_CUSTOM
 
-#if (defined GS_PLATFORM_WIN || defined GS_PLATFORM_APPLE || defined GS_PLATFORM_LINUX)
+#if (defined GS_PLATFORM_RGFW && (defined GS_PLATFORM_WIN || defined GS_PLATFORM_APPLE || defined GS_PLATFORM_LINUX || defined GS_PLATFORM_WEB))\
+
+    #define GS_PLATFORM_IMPL_RGFW
+
+#elif (defined GS_PLATFORM_WIN || defined GS_PLATFORM_APPLE || defined GS_PLATFORM_LINUX)
 
         #define GS_PLATFORM_IMPL_GLFW
 
@@ -6826,7 +6830,11 @@ gs_main(int32_t argc, char** argv);
 #include GS_PLATFORM_IMPL_FILE
 #endif
 
+#ifdef GS_PLATFORM_RGFW
+#include "impl/gs_platform_rgfw_impl.h"
+#else
 #include "impl/gs_platform_impl.h"
+#endif
 
 /*=============================
 // GS_GRAPHICS
